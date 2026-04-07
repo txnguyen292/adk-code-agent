@@ -1,0 +1,25 @@
+[project]
+name = "offline-coding-agent"
+version = "0.1.0"
+description = "Local coding agent with docker-sandboxed bash execution"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "google-adk[extensions]",
+    "litellm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
